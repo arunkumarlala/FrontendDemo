@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body onload="showMsg()">
+    <div class="container">
+        <h1 style="text-align: center;">JS TASK</h1>
+        <div class="row">
+            <h2>Task 1</h2>
+            <div class="row m-4">
+                <div class="col"><label>Number Check</label></div>
+                <div class="col"><input type="number" id="numberCalc" name="numberCalc" onkeyup="numberCalc()" class="form-control"/></div>
+                <div class="col"><span id="numberCalcMsg"></span></div>
+            </div>         
+            <script>
+            function numberCalc(){
+                    let number = Number(document.getElementById('numberCalc').value);
+                    let msg = "";
+                    if(number > 0){
+                            msg = "The Given Number is Positive Number";
+                        }
+                    else{
+                            msg="The Given Number is Negative Number";
+                        }
+
+                    document.getElementById('numberCalcMsg').innerHTML = msg;
+                }
+            </script>
+        
+        </div>
+        <div class="row">
+            <h2>Task 2</h2>
+            <div class="row m-4">
+                <div class="col"><label>Greatest Number Check</label></div>
+                <div class="col"><input type="firstnumber" id="firstnumberCalc" name="firstnumberCalc"  class="form-control"/></div>
+                
+                <div class="col"><input type="secondnumber" id="secondnumberCalc" name="secondnumberCalc"  class="form-control"/></div>
+                <div class="col"><span id="secondnumberCalcMsg"></span></div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="greatestnumberCalc()">Greatest Number Result</button>
+                </div>
+            </div>         
+            <script>
+            function greatestnumberCalc(){
+                    let greatestnumber1 = Number(document.getElementById('firstnumberCalc').value);
+                    let greatestnumber2 = Number(document.getElementById('secondnumberCalc').value);
+                    let greatestnumbermsg = "";
+                    if(greatestnumber1 > greatestnumber2){
+                        greatestnumbermsg = "The Greatest Number is "+ greatestnumber1 ;
+                        }
+                    else{
+                        greatestnumbermsg="The Greatest Number is "+ greatestnumber2;
+                        }
+
+                    document.getElementById('secondnumberCalcMsg').innerHTML = greatestnumbermsg;
+                }
+            </script>  
+        </div>
+        <div class="row">
+            <h2>Task 3</h2>
+            <div class="row m-4">
+                <div class="col"><label>Smallest Number Check</label></div>
+                <div class="col"><input type="firstnum" id="firstnumCalc" name="firstnumCalc"  class="form-control"/></div>
+                <div class="col"><span id="firstnumCalcMsg"></span></div>
+                <div class="col"><input type="secondnum" id="secondnumCalc" name="secondnumCalc"  class="form-control"/></div>
+                <div class="col"><span id="secondnumCalcMsg"></span></div>
+                <div class="col"><input type="thirdnum" id="thirdnumCalc" name="thirdnumCalc"  class="form-control"/></div>
+                <div class="col"><span id="thirdnumCalcMsg"></span></div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="smallestnumberCalc()">Smallest Number Result</button>
+                </div>
+            </div>         
+            <script>
+            function smallestnumberCalc(){
+                    let smallestnumber1 = Number(document.getElementById('firstnumCalc').value);
+                    let smallestnumber2 = Number(document.getElementById('secondnumCalc').value);
+                    let smallestnumber3 = Number(document.getElementById('thirdnumCalc').value);
+                    let smallestnumbermsg = "";
+                    if((smallestnumber1 < smallestnumber2) && (smallestnumber1 < smallestnumber3)){
+                        smallestnumbermsg = "The Smallest Number is "+ smallestnumber1 ;
+                        }
+                    else if((smallestnumber2 < smallestnumber1) && (smallestnumber2 < smallestnumber3)){
+                        smallestnumbermsg = "The Smallest Number is "+ smallestnumber2 ;
+                        }
+                    else{
+                        smallestnumbermsg = "The Smallest Number is "+ smallestnumber3 ;
+                        }
+
+                    document.getElementById('thirdnumCalcMsg').innerHTML = smallestnumbermsg;
+                }
+            </script> 
+        </div>
+        <div class="row">
+            <h2>Task 4</h2>
+            <div class="row m-4">
+                <div class="col"><label>Odd Even Number Check</label></div>
+                <div class="col"><input type="oddeven" id="oddevenCalc" name="oddevenCalc" onkeyup="oddevennumberCalc()" class="form-control"/></div>
+                <div class="col"><span id="oddevennumberCalcMsg"></span></div>
+            </div>         
+            <script>
+            function oddevennumberCalc(){
+                    let oddevennumber = Number(document.getElementById('oddevenCalc').value);
+                    let oddevenmsg = "";
+                    if(oddevennumber % 2 == 0){
+                        oddevenmsg = "The Given Number is Even Number";
+                        }
+                    else{
+                        oddevenmsg="The Given Number is Odd Number";
+                        }
+
+                    document.getElementById('oddevennumberCalcMsg').innerHTML = oddevenmsg;
+                }
+            </script>
+        </div>
+        <div class="row">
+            <h2>Task 5</h2>
+            <div class="row m-4">
+                <div class="col"><label>Fullform  Number Check</label></div>
+                <div class="col"><input type="fullform" id="fullformCalc" name="fullformCalc" onkeyup="fullformnumberCalc()" class="form-control"/></div>
+                <div class="col"><span id="fullformnumberCalcMsg"></span></div>
+            </div>         
+            <script>
+            function fullformnumberCalc(){
+                    let fullformnumber = Number(document.getElementById('fullformCalc').value);
+                    let fullformmsg = "";
+                    if(fullformnumber== 1){
+                        fullformmsg = "one";
+                        }
+                    else if(fullformnumber== 2){
+                        fullformmsg="second";
+                        }
+                    else if(fullformnumber== 3){
+                        fullformmsg="three";
+                        }
+                    else if(fullformnumber== 4){
+                        fullformmsg="four";
+                        }
+                    else if(fullformnumber== 5){
+                        fullformmsg="five";
+                        }
+                    else{
+                        fullformmsg="This input box gives result for only 1 to 5"
+                    }
+
+                    document.getElementById('fullformnumberCalcMsg').innerHTML = fullformmsg;
+                }
+            </script>
+        </div>
+    </div>                      
+</body>
+</html>

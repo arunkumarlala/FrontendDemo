@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style> 
+        #first {
+          
+          background-color: gray;
+          border-style: solid;
+          
+        }
+        #second {
+          
+          background-color: gray;
+          border-style: solid;
+        }
+        #third {
+          
+          background-color: gray;
+          border-style: solid;
+        }
+        #fourth {
+          
+          background-color: gray;
+          border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="row p-5" style="height: 200px;">
+        <div class="col-3 "  id="first">S1<span id="s1msg"></span></div>
+        <div class=" col-3 " id="second">
+            S2<span id="s2msg"></span></div>
+        <div class="col-3 "  id="third">
+            S3<span id="s3msg"></span></div>
+        <div class="col-3 " id="fourth" >S4<span id="s4msg"></span></div>
+    </div>
+    <div class="row py-5">
+        <div class="col"><select  class="form-select" name="book" id="booked">
+            <option >S1</option>
+            <option >S2</option>
+            <option >S3</option>
+            <option >S4</option>
+        </select> </div>
+        <div class="col"><select class="form-select" name="release" id="released">
+            <option >S1</option>
+            <option >S2</option>
+            <option >S3</option>
+            <option >S4</option>
+        </select> </div>
+        <div class="col"><input type="text" class="form-control" id="vnumber"name="vnumber" placeholder="vehicle number"></div>
+    </div>
+    <div class="row py-2">
+        <div class="col"><button type="button" class="btn btn-primary"  onclick="booking()">BOOK</button></div>
+        <div class="col"><button class="btn btn-primary" type="button" onclick="releasing()">RELEASE</button></div>
+    </div>
+    <script>
+      
+       function booking(){
+        let booker=document.getElementById('booked').value;
+        let no=document.getElementById('vnumber').value;
+        let bookmsg1="";
+        let bookmsg2="";
+        let bookmsg3="";
+        let bookmsg4="";
+        if(booker=="S1"){
+            bookmsg1="Vehicle no "+no;
+            document.getElementById("first").style.backgroundColor="green";
+           
+        }
+        else  if(booker=='S2'){
+            bookmsg2="Vehicle no "+no;
+            document.getElementById("second").style.backgroundColor="green";
+        }
+        else  if(booker=='S3'){
+            bookmsg3="Vehicle no "+no;
+            document.getElementById("third").style.backgroundColor="green";
+        }
+        else if(booker=='S4'){
+            bookmsg4="Vehicle no "+no;
+            document.getElementById("fourth").style.backgroundColor="green";
+        }
+        document.getElementById('s1msg').innerHTML=bookmsg1;
+        document.getElementById('s2msg').innerHTML=bookmsg2;
+        document.getElementById('s3msg').innerHTML=bookmsg3;
+        document.getElementById('s4msg').innerHTML=bookmsg4;
+       }
+       
+       
+       function releasing(){
+        let rel=document.getElementById('released').value;
+        let nom=document.getElementById('vnumber').value;
+        let bookmsg5="";
+        let bookmsg6="";
+        let bookmsg7="";
+        let bookmsg8="";
+        if(rel=="S1"){
+            
+            document.getElementById("first").style.backgroundColor="gray";
+           
+        }
+        else  if(rel=='S2'){
+            
+            document.getElementById("second").style.backgroundColor="gray";
+        }
+        else  if(rel=='S3'){
+           
+            document.getElementById("third").style.backgroundColor="gray";
+        }
+        else if(rel=='S4'){
+           
+            document.getElementById("fourth").style.backgroundColor="gray";
+        }
+        document.getElementById('s1msg').innerHTML=bookmsg5;
+        document.getElementById('s2msg').innerHTML=bookmsg6;
+        document.getElementById('s3msg').innerHTML=bookmsg7;
+        document.getElementById('s4msg').innerHTML=bookmsg8;
+       }
+       
+       
+    </script>
+   
+</div>
+</body>
+</html>

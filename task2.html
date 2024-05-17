@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div><h1 style="text-align: center;">JS TASKS 2</h1></div>
+        <div class="row py-2">
+            <h2>DISCOUNT</h2>
+        </div>
+        <div class="row py-2">
+            <div class="col"><label>Bill Amount</label></div>
+            <div class="col"><input type="number" class="form-control" name="amount" id="amount" onkeyup="discountcalc()"></div>
+            <div class="col"><span id="discountamtmsg"></span></div>
+    </div>
+    <script>
+        function discountcalc(){
+            let bill=Number(document.getElementById('amount').value);
+            let discountmsg="";
+            if(bill>2000){
+                discountmsg="bill amount is "+(bill-(bill*10/100));
+            }
+            else{
+                discountmsg="bill amount is "+bill;
+            }
+            document.getElementById('discountamtmsg').innerHTML=discountmsg;
+        }
+    </script>
+    <div class="row py-2">
+        <h2>HIKE</h2>
+    </div>
+    <div class="row py-2">
+        <div class="col"><lable>Salary</lable></div>
+        <div class="col"><input type="number" class="form-control" id="salaryamt"></div>
+        <div class="col"><lable> Experience</lable></div>
+        <div class="col"><input type="number" class="form-control" id="noofyears" ></div>
+        <div class="col"><span id="hikemsg"></span> </div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="hikeamt()">Hike</button></div>
+    </div>
+    <script>
+        function hikeamt(){
+            let sal=Number(document.getElementById('salaryamt').value);
+            let exp=Number(document.getElementById('noofyears').value);
+            let finalmsg="";
+            if((sal<30000)&&(exp>3)){
+                finalmsg="The hike is "+(sal+(sal*30/100));
+            }
+            else{
+                finalmsg="No hike "+sal;
+            }
+            document.getElementById('hikemsg').innerHTML=finalmsg;
+        }
+    </script>
+    <div class="row py-2">
+        <h2>GST</h2>
+    </div>
+    <div class="row py-2">
+        <div class="col"><label>Bill</label></div>
+        <div class="col"><input type="number" class="form-control" id="bill"></div>
+        <div class="col">
+            <select class="form-select" name="mod" id="mode" >
+            <option value="sel">--Select card or cash--</option>
+            <option value="card">card</option>
+            <option value="cash">cash</option>
+        </select></div>
+        <div class="col"><span id="gstbillmsg"></span></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="gstbill()">Bill</button></div>
+    </div>
+    <script>
+        function gstbill(){
+            let amt=Number(document.getElementById('bill').value);
+            let pm=document.getElementById('mode').value;
+            let nbmsg="";
+            if(pm=='card'){
+                nbmsg="Bill amount is "+(amt+(amt*8/100));
+            }
+            else if(pm=='cash'){
+                nbmsg="Bill amount is "+(amt+(amt*5/100));
+            }
+            else  if(pm=='--Select card or cash--'){
+                alert("select any of the following below")
+            }
+            document.getElementById('gstbillmsg').innerHTML=nbmsg;
+        }
+        
+    </script>
+     <div class="row py-2">
+        <h2>ATTENDENCE</h2>
+    </div>
+    <div class="row py-2">
+        <div class="col"><label>Total days</label></div>
+        <div class="col"><input type="number" class="form-control" id="days" name="days"></div>
+        <div class="col"><input type="number" class="form-control" id="attn" name="attn"></div>
+        <div class="col"><select class="form-select" name="med" id="med">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select></div>
+        <div class="col"><span id="attnmsg"></span></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="selection()">result</button></div>
+    </div>
+    <script>
+        function selection(){
+            let day=Number(document.getElementById('days').value);
+            let att=Number(document.getElementById('attn').value);
+            let medical=document.getElementById('med').value;
+            let attmsg="";
+            if(att>(day*75/100)){
+                attmsg="allowed";
+            }
+            else if((att<(day*75/100))&&(medical=='yes')){
+                attmsg=" allowed";
+            }
+            else{
+                attmsg="not allowed"
+            }
+            document.getElementById('attnmsg').innerHTML=attmsg;
+        }
+    </script>
+    
+        <div class="row py-2">
+            <h2>GRADE</h2>
+        </div>
+        <div class="row py-2">
+            <div class="col"><label>Marks</label></div>
+            <div class="col"><input type="number" class="form-control" name="marks" id="marks" onkeyup="gradecalc()"></div>
+            <div class="col"><span id="grademsg"></span></div>
+    </div>
+    <script>
+        function gradecalc(){
+            let mark=Number(document.getElementById('marks').value);
+            let gmsg="";
+            if(mark>90){
+                gmsg="A";
+            }
+            else if(mark>80){
+                gmsg="B";
+            }
+             else if(mark>70){
+                gmsg="C";
+            }
+            else if(mark>60){
+                gmsg="D";
+            }
+            else if(mark>50){
+                gmsg="E";
+            }
+            else{
+                gmsg="F"
+            }
+            document.getElementById('grademsg').innerHTML=gmsg;
+        }
+    </script>
+</div>
+    
+</body>
+</html>
