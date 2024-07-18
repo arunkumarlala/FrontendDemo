@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2> Push</h2>
+       
+       
+            <p id="GFG_UP"></p> 
+            <button type="button" class="btn btn-primary" id="pushbtn" onclick="push()"> 
+                Push
+            </button> 
+            <p id="GFG_DOWN"></p> 
+            <script> 
+                var arr = ["name 1", "name 2", 
+                            "name 3", "name 4"]; 
+                var up = document.getElementById("GFG_UP"); 
+                up.innerHTML = "Array = [" + arr + "]"; 
+                var element = "name x"; 
+                var down = document.getElementById("GFG_DOWN"); 
+                function push() { 
+                arr[arr.length] = element; 
+                down.innerHTML = "Elements of array = [" + arr + "]"; 
+                        } 
+            </script> 
+             <h2> Unshift</h2>
+       
+       
+             <p id="usUP"></p> 
+             <button type="button" class="btn btn-primary" id="usbtn" onclick="unshift()"> 
+                 unshift
+             </button> 
+             <p id="usDOWN"></p> 
+             <script> 
+                 var arr = ["name 1", "name 2", 
+                             "name 3", "name 4"]; 
+                 var up = document.getElementById("usUP"); 
+                 up.innerHTML = "Array = [" + arr + "]"; 
+                 var element = "name x"; 
+                 var down = document.getElementById("usDOWN"); 
+                 function unshift() { 
+                 arr[0] = element; 
+                 down.innerHTML = "Elements of array = [" + arr + "]"; 
+                         } 
+             </script> 
+              <h2> Pop</h2>
+       
+       
+              <p id="popUP"></p> 
+              <button type="button" class="btn btn-primary" id="popbtn" onclick="pop()"> 
+                  pop
+              </button> 
+              <p id="popDOWN"></p> 
+              <script> 
+                  var arr = ["name 1", "name 2", 
+                              "name 3", "name 4"]; 
+                  var up = document.getElementById("popUP"); 
+                  up.innerHTML = "Array = [" + arr + "]"; 
+                  var element = "name x"; 
+                  var down = document.getElementById("popDOWN"); 
+                  function pop() { 
+                  arr[3]="_"
+                  down.innerHTML = "Elements of array = [" + arr + "]"; 
+                          } 
+              </script> 
+               <h2> Shift</h2>
+       
+       
+               <p id="shiftUP"></p> 
+               <button type="button" class="btn btn-primary" id="shiftbtn" onclick="shift()"> 
+                   shift
+               </button> 
+               <p id="shiftDOWN"></p> 
+               <script> 
+                   var arr = ["name 1", "name 2", 
+                               "name 3", "name 4"]; 
+                   var up = document.getElementById("shiftUP"); 
+                   up.innerHTML = "Array = [" + arr + "]"; 
+                   var element = "name x"; 
+                   var down = document.getElementById("shiftDOWN"); 
+                   function shift() { 
+                   arr[0]="_"
+                   down.innerHTML = "Elements of array = [" + arr + "]"; 
+                           } 
+               </script> 
+               <h2> Includes</h2>
+       
+       
+               <p id="includesup"></p> 
+               <button type="button" class="btn btn-primary" id="includesbtn" onclick="includes()"> 
+                   shift
+               </button> 
+               <p id="includesDOWN"></p> 
+               <script> 
+                   var arr = ["name 1", "name 2", 
+                               "name 3", "name 4"]; 
+                   var up = document.getElementById("includesup"); 
+                   up.innerHTML = "Array = [" + arr + "]"; 
+                   var selement = "name 3"; 
+                   var down = document.getElementById("includesDOWN"); 
+                   function includes(arr,element) { 
+                   for(let idx=0;idx<arr.length;idx++)
+                   {
+                    if (arr[idx]==selement)
+                    {
+                        
+
+                    }
+                   }
+                   down.innerHTML = "Elements of array = [" + arr + "]"; 
+                           } 
+               </script> 
+        </body>
+    </div>
+</body>
+</html>

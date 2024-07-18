@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        img {
+  width: 250px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+  -webkit-mask-box-image: var(--_m);
+             mask-border: var(--_m);
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
+  outline: 100vmax solid #ff3e60;
+  outline-offset: -100vmax;
+  transition: .7s;
+  cursor: pointer;
+}
+img:hover {
+  outline-color: #0000;
+}
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) { 
+  img {
+   --_m:
+     radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+     radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+     linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+   -webkit-mask: var(--_m);
+           mask: var(--_m);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 50px;
+  background: #ebfffb;
+  filter: drop-shadow(0 0 4px #ff3e60) drop-shadow(0 0 4px #ff3e60)
+}
+     </style>
+</head>
+<body>
+    <img src="./Asseerts/svg15.JPG"  alt="a random picture of a man">
+<img src="./Asseerts/svg18.JPG"  alt="a random picture of a girl">
+<div>
+    <button type="button" class="btn btn-link">
+        <a href="./reveal.html">Previous</a>
+    </button>
+    <button type="button" class="btn btn-link">
+        <a href="./gradienthover.html">Next</a>
+    </button>
+    
+</div>
+
+</body>
+</html>

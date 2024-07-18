@@ -84,7 +84,7 @@
         </script>
          <div class="row p-3">
             <h2> Task 4</h2>
-
+            &nbsp;
         </div>
         <div class="row">
             <div class="col"><h4>pattern 4</h4></div>
@@ -99,7 +99,7 @@
                 let msg="";
                 for(let row=1;row<=n;row++){
                     for(let col=1;col<=(n-row);col++){
-                        result=result+"-";
+                        result=result+"&nbsp;";
                         
                     }
                     for(let star=0;star<row;star++){
@@ -129,13 +129,13 @@
 let n = 5;
 let result="";
 let msg="";
-// External loop
+
 for (let i = 1; i <= n; i++) {
-  // printing spaces
+  
   for (let j = 1; j <=(n-i); j++) {
-    result=result+"_";
+    result=result+"&nbsp;&nbsp;";
   }
-  // printing stars
+  
   for (let k = 1; k <= (2*i-1); k++) {
     result=result+"*";
   }
